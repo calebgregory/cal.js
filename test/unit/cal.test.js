@@ -2,22 +2,22 @@ var should = require('chai').should();
 var assert = require('chai').assert;
 var path = require('path');
 
-describe('Cal', function() {
+describe('Year', function() {
 
-  describe('#year', function() {
+  describe('#month', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
 
     it('should return the month name from a number', function() {
-      yr[1].name.should.equal('January');
+      yr.month[1].name.should.equal('January');
     });
 
     it('should return the number of days in the month', function() {
-      yr[1].numDays.should.equal(31);
+      yr.month[1].numDays.should.equal(31);
     });
 
     it('should return a falsy value if user enters a month that doesn\'t exist', function() {
-      assert.equal(yr[13],undefined);
+      assert.equal(yr.month[13],undefined);
     });
 
     it('should return the correct number of days for each month', function() {
@@ -37,31 +37,31 @@ describe('Cal', function() {
       ];
 
       year.forEach(function(month, i) {
-        yr[i+1].name.should.equal(Object.keys(month)[0])
-        yr[i+1].numDays.should.equal(month[Object.keys(month)[0]])
+        yr.month[i+1].name.should.equal(Object.keys(month)[0])
+        yr.month[i+1].numDays.should.equal(month[Object.keys(month)[0]])
       });
     });
 
-    it('should return 29 if year is a leap year',function(done) {
+    it('should return 29 for Feb if year is a leap year',function(done) {
       yr.isLeapYear();
       setTimeout(function() {
-        yr["2"].numDays.should.equal(29);
+        yr.month["2"].numDays.should.equal(29);
         done()
       },500)
     });
+  });
 
-    describe('#isLeapYear()', function() {
-      var leapyear = require(path.join(process.cwd(),'/lib/cal.year.js'));
-      it('should toggle leap year condition to true', function(done) {
-        leapyear.ly.should.equal(false);
-        setTimeout(function() {
-          leapyear.isLeapYear();
-          leapyear.ly.should.equal(true);
-          done();
-        },500);
-      });
+
+  describe('#isLeapYear()', function() {
+    var leapyear = require(path.join(process.cwd(),'/lib/cal.year.js'));
+    it('should toggle leap year condition to true', function(done) {
+      leapyear.ly.should.equal(false);
+      setTimeout(function() {
+        leapyear.isLeapYear();
+        leapyear.ly.should.equal(true);
+        done();
+      },500);
     });
-
   });
 
 });
