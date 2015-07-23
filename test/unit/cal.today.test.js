@@ -12,4 +12,9 @@ describe('Today', function() {
     var today = require(path.join(process.cwd(),'/lib/cal.today'));
     today.day.should.equal(23);
   });
+
+  it('should know the current year', function() {
+    var today = require(path.join(process.cwd(),'/lib/cal.today'));
+    today.year.should.equal(2015);
+  });
 });
