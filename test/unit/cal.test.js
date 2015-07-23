@@ -41,5 +41,12 @@ describe('Cal', function() {
         yr[i+1].numDays.should.equal(month[Object.keys(month)[0]])
       });
     });
+
+    it('should return 29 if year is a leap year',function() {
+      yr.isLeapYear();
+      yr["2"].numDays.should.equal(29);
+    });
+
   });
+
 });
