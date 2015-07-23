@@ -50,6 +50,15 @@ describe('Cal', function() {
       },500)
     });
 
+    describe('#isLeapYear()', function() {
+      var leapyear = require(path.join(process.cwd(),'/lib/cal.year.js'));
+      it('should toggle leap year condition to true', function() {
+        leapyear.ly.should.equal(false);
+        leapyear.isLeapYear();
+        leapyear.ly.should.equal(true);
+      });
+    });
+
   });
 
 });
