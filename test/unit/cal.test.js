@@ -4,7 +4,7 @@ var path = require('path');
 
 describe('Cal', function() {
 
-  describe('#month', function() {
+  describe('#year', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
 
