@@ -7,4 +7,9 @@ describe('Today', function() {
     var today = require(path.join(process.cwd(),'/lib/cal.today'));
     today.month.should.equal(7);
   });
+
+  it('should know the current day', function() {
+    var today = require(path.join(process.cwd(),'/lib/cal.today'));
+    today.day.should.equal(23);
+  });
 });
