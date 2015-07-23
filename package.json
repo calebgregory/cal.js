@@ -1,0 +1,28 @@
+{
+  "name": "cli-cal",
+  "version": "1.0.0",
+  "description": "An emulation of the unix cal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebgregory/cli-cal.git"
+  },
+  "author": "Caleb Gregory <calebgregory@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calebgregory/cli-cal/issues"
+  },
+  "homepage": "https://github.com/calebgregory/cli-cal#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "codeclimate-test-reporter": "^0.1.0",
+    "istanbul": "^0.3.17",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "yargs": "^3.15.0"
+  }
+}
