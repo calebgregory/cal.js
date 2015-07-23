@@ -42,9 +42,12 @@ describe('Cal', function() {
       });
     });
 
-    it('should return 29 if year is a leap year',function() {
+    it('should return 29 if year is a leap year',function(done) {
       yr.isLeapYear();
-      yr["2"].numDays.should.equal(29);
+      setTimeout(function() {
+        yr["2"].numDays.should.equal(29);
+        done()
+      },500)
     });
 
   });
