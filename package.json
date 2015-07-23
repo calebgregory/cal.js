@@ -4,7 +4,10 @@
   "description": "An emulation of the unix cal",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive test/unit",
+    "test-integration": "mocha --recursive test/integration",
+    "test-cov": "istanbul cover _mocha -- --recursive",
+    "codeclimate-coverage": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
