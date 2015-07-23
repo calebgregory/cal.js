@@ -17,4 +17,9 @@ describe('Today', function() {
     var today = require(path.join(process.cwd(),'/lib/cal.today'));
     today.year.should.equal(2015);
   });
+
+  it('should know what day of the week it is', function() {
+    var today = require(path.join(process.cwd(),'/lib/cal.today'));
+    today.weekday.should.equal('Thursday');
+  });
 });
