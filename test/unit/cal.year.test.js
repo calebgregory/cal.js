@@ -48,17 +48,22 @@ describe('Year', function() {
     });
 
     it('should return a falsy value if user enters a month that doesn\'t exist', function() {
-      assert.equal(yr.numDays(13),undefined);
+      assert.equal(yr.numDays(13),0);
     });
 
-    it('should return the correct number of days for each month', function() {
-      yearDictionary.forEach(function(month, i) {
-        yr.numDays(i+1).should.equal(month[Object.keys(month)[0]])
-      });
+    it('should return the correct number of days for each non-feb month', function() {
+      yr.numDays(1).should.equal(31);
+      yr.numDays(4).should.equal(30);
+      yr.numDays(8).should.equal(31);
+      yr.numDays(9).should.equal(30);
     });
 
     it('should return 29 for Feb if year is a leap year',function() {
       yr.numDays(2,2000).should.equal(29);
+    });
+
+    it('should return 28 for Feb if year is not a leap year', function() {
+      yr.numDays(2,2001).should.equal(28);
     });
 
   });
