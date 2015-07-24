@@ -46,4 +46,13 @@ describe('Zeller', function() {
     });
   });
 
+  describe('#weekday()', function() {
+    it('should return 5 for Thursday', function() {
+      zeller.weekday(2015,7,23).should.equal(5);
+    });
+    it('should return 7 for a saturday', function() {
+      zeller.weekday(2015,8,1).should.equal(7);
+    });
+  });
+
 });
