@@ -67,16 +67,4 @@ describe('Year', function() {
     });
   });
 
-
-  describe('#isLeapYear()', function() {
-    var leapyear = require(path.join(process.cwd(),'/lib/cal.year.js'));
-    console.log(leapyear);
-    it('should return true if a year is a leapyear', function() {
-      leapyear.isLeapYear(2016).should.equal(true);
-    });
-    it('should return false if a year is not a leapyear', function() {
-      leapyear.isLeapYear(2015).should.equal(false);
-    });
-  });
-
 });
