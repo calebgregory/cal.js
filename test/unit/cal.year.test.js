@@ -28,7 +28,7 @@ describe('Year', function() {
         { "April"     : 30 },
         { "May"       : 31 },
         { "June"      : 30 },
-        { "July"      : 30 },
+        { "July"      : 31 },
         { "August"    : 31 },
         { "September" : 30 },
         { "October"   : 31 },
