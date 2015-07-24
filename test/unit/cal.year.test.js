@@ -58,12 +58,8 @@ describe('Year', function() {
       });
     });
 
-    it('should return 29 for Feb if year is a leap year',function(done) {
-      yr.isLeapYear();
-      setTimeout(function() {
-        yr.month["2"].numDays.should.equal(29);
-        done()
-      },500)
+    it('should return 29 for Feb if year is a leap year',function() {
+      yr.month["2"].numDays(2000).should.equal(29);
     });
   });
 
