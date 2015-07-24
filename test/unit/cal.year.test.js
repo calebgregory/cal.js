@@ -4,6 +4,22 @@ var path = require('path');
 
 describe('Year', function() {
 
+  describe('#isLeapYear()', function() {
+    var year = require(path.join(process.cwd(),'/lib/cal.year.js'));
+    it('should return true if a year is a leapyear', function() {
+      year.isLeapYear(2016).should.equal(true);
+    });
+    it('should return false if a year is not a leapyear', function() {
+      year.isLeapYear(2015).should.equal(false);
+    });
+    it('should return false for a year like 1900 - divisible by 4 & 100 but not 400', function() {
+      year.isLeapYear(1900).should.equal(false);
+    });
+    it('should return true for a year like 2000 - divisible by 400', function() {
+      year.isLeapYear(2000).should.equal(true);
+    });
+  });
+
   describe('#month', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
