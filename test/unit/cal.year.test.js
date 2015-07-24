@@ -53,7 +53,7 @@ describe('Year', function() {
 
     it('should return the correct number of days for each month', function() {
       yearDictionary.forEach(function(month, i) {
-        yr.month[i+1].numDays.should.equal(month[Object.keys(month)[0]])
+        yr.numDays(i+1).should.equal(month[Object.keys(month)[0]])
       });
     });
 
