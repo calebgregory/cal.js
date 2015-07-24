@@ -53,6 +53,12 @@ describe('Zeller', function() {
     it('should return 7 for a saturday', function() {
       zeller.weekday(2015,8,1).should.equal(7);
     });
+    it('should be accurate to 1753', function() {
+      zeller.weekday(1753,3,1).should.equal(5);
+    });
+    it('should be accurate to 9999', function() {
+      zeller.weekday(9999,3,1).should.equal(2);
+    });
   });
 
 });
