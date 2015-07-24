@@ -22,4 +22,11 @@ describe('Zeller', function() {
       zeller.zeroBasedCentury(2015).should.equal(20);
     });
   });
+
+  describe('#decodeDay', function() {
+    it('should return 7 if given a 0', function() {
+      zeller.decodeDay(1).should.equal(1);
+      zeller.decodeDay(0).should.equal(7);
+    });
+  });
 });
