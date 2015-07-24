@@ -23,10 +23,27 @@ describe('Zeller', function() {
     });
   });
 
-  describe('#decodeDay', function() {
+  describe('#decodeDay()', function() {
     it('should return 7 if given a 0', function() {
       zeller.decodeDay(1).should.equal(1);
       zeller.decodeDay(0).should.equal(7);
     });
   });
+
+  describe('#decodeYear()', function() {
+    it('should return the "next" year if month is Jan or Feb', function() {
+      zeller.decodeYear(13,2014).should.equal(2015);
+      zeller.decodeYear(14,2014).should.equal(2015);
+      zeller.decodeYear(3,2015).should.equal(2015);
+    });
+  });
+
+  describe('#decodeMonth()', function() {
+    it('should change Jan and Feb month numbers back to 1 and 2', function() {
+      zeller.decodeMonth(13).should.equal(1);
+      zeller.decodeMonth(14).should.equal(2);
+      zeller.decodeMonth(3).should.equal(3);
+    });
+  });
+
 });
