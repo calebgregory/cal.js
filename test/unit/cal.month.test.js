@@ -13,6 +13,10 @@ describe.only('Month', function() {
     it('should be print the first line in a month', function() {
       month.addLine(1,4,7,2015).should.equal('          1  2  3  4\n');
     });
+
+    it('should print a new line after the last day of the month', function() {
+      month.addLine(26,31).should.equal('26 27 28 29 30 31\n');
+    });
   });
 
   describe('#days()', function() {
