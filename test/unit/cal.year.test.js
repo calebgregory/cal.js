@@ -85,7 +85,7 @@ describe.only('Year', function() {
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
 
     it('should return the year, offset by 34 spaces', function() {
-      var output = '                             2015';
+      var output = '                             2015\n\n';
       yr.title(2015).should.equal(output);
     });
 
