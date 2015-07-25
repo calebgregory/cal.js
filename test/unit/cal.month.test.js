@@ -41,7 +41,7 @@ describe.only('Month', function() {
 
   describe('#title()', function() {
     it('should print an evenly spaced title with year name', function() {
-       month.title(7).should.equal('     July 2015\n');
+       month.title(7,2015).should.equal('     July 2015\n');
     });
   });
 
