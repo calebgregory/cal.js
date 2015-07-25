@@ -3,7 +3,7 @@ var should = require('chai').should();
 
 var month = require(path.join(process.cwd(),'/lib/cal.month'));
 
-describe.only('Month', function() {
+describe('Month', function() {
   describe('#addLine()', function() {
 
     it('should print 7 days in a row', function() {

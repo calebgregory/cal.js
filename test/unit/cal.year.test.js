@@ -17,7 +17,7 @@ var yearDictionary = [
   { "December"  : 31 }
 ];
 
-describe('Year', function() {
+describe.only('Year', function() {
 
   describe('#isLeapYear()', function() {
     var year = require(path.join(process.cwd(),'/lib/cal.year.js'));
@@ -76,6 +76,17 @@ describe('Year', function() {
 
     it('should return 28 for Feb if year is not a leap year', function() {
       yr.numDays(2,2001).should.equal(28);
+    });
+
+  });
+
+  describe('#title()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should return the year, offset by 34 spaces', function() {
+      var output = '                             2015';
+      yr.title(2015).should.equal(output);
     });
 
   });
