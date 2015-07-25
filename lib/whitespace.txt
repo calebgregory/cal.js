@@ -1,0 +1,25 @@
+
+       WHITESPACE BY MONTH
+       m = month,
+       n = number of characters in month [year],
+       l = whitespace on left,
+       r = whitespace on right,
+       L = length of line = 20.
+
+       OFFSET = floor((L - n) / 2);
+
+                    OFFSET CHART
+
+       n  l r        L    n   L-n           L-n/2
+       3  8 9       20 -  3 = 17      17/2 = 8.5
+       4  8 8       20 -  4 = 16      16/2 = 8
+       5  7 8       20 -  5 = 15      15/2 = 7.5
+       6  7 7       20 -  6 = 14      14/2 = 7
+       7  6 7       20 -  7 = 13      13/2 = 6.5
+       8  6 6       20 -  8 = 12      12/2 = 6
+       9  5 6       20 -  9 = 11      11/2 = 5.5
+       10 5 5       20 - 10 = 10      10/2 = 5
+       11 4 5       20 - 11 =  9       9/2 = 4.5
+       12 4 4       20 - 12 =  8       8/2 = 4
+       13 3 4       20 - 13 =  7       7/2 = 3.5
+       14 3 3       20 - 14 =  6       6/2 = 3
