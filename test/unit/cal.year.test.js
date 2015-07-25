@@ -91,4 +91,15 @@ describe.only('Year', function() {
 
   });
 
+  describe('#wkdys()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should print a list of week day names, three columns', function() {
+      var weekdays = 'Su Mo Tu We Th Fr Sa'
+      weekdays = weekdays + '  ' + weekdays + '  ' + weekdays + '\n';
+      yr.wkdys().should.equal(weekdays);
+    });
+  });
+
 });
