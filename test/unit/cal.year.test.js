@@ -35,6 +35,18 @@ describe('Year', function() {
     });
   });
 
+  describe('#monthName', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should return the correct name for each month', function() {
+      yearDictionary.forEach(function(month,i) {
+        yr.monthName[i+1].should.equal(Object.keys(month)[0])
+      });
+    });
+
+  });
+
   describe('#numDays()', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
@@ -64,18 +76,6 @@ describe('Year', function() {
 
     it('should return 28 for Feb if year is not a leap year', function() {
       yr.numDays(2,2001).should.equal(28);
-    });
-
-  });
-
-  describe('#monthName', function() {
-
-    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
-
-    it('should return the correct name for each month', function() {
-      yearDictionary.forEach(function(month,i) {
-        yr.monthName[i+1].should.equal(Object.keys(month)[0])
-      });
     });
 
   });
