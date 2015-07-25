@@ -28,4 +28,11 @@ describe.only('Month', function() {
       month.days(7,2015).should.equal(output);
     });
   });
+
+  describe('#startIndex()', function() {
+    it('should take a week day number and return the start index for that day - e.g., (Th) 4 => 11', function() {
+      month.startIndex(1).should.equal(2);
+      month.startIndex(4).should.equal(11);
+    });
+  });
 });
