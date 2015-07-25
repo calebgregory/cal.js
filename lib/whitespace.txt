@@ -2,7 +2,7 @@
        WHITESPACE BY MONTH
        m = month,
        n = number of characters in month [year],
-       l = whitespace on left,
+       l = whitespace on left = OFFSET,
        r = whitespace on right,
        L = length of line = 20.
 
