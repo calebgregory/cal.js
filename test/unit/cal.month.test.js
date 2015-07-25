@@ -32,6 +32,20 @@ describe.only('Month', function() {
     });
   });
 
+  describe('#display()', function() {
+    it('should print a standard display of the month', function() {
+      var output = [
+        '     July 2015\n',
+        'Su Mo Tu We Th Fr Sa\n',
+        '          1  2  3  4\n',
+        ' 5  6  7  8  9 10 11\n',
+        '12 13 14 15 16 17 18\n',
+        '19 20 21 22 23 24 25\n',
+        '26 27 28 29 30 31\n'
+      ].join('');
+    });
+  });
+
   describe('#startIndex()', function() {
     it('should take a week day number and return the start index for that day - e.g., (Th) 4 => 11', function() {
       month.startIndex(1).should.equal(2);
