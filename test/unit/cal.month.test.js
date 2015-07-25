@@ -7,15 +7,15 @@ describe.only('Month', function() {
   describe('#addLine()', function() {
 
     it('should print 7 days in a row', function() {
-      month.addLine(3,9).should.equal(' 3  4  5  6  7  8  9\n');
+      month.addLine(5,7,2015).should.equal(' 5  6  7  8  9 10 11\n');
     });
 
     it('should be print the first line in a month', function() {
-      month.addLine(1,4,7,2015).should.equal('          1  2  3  4\n');
+      month.addLine(1,7,2015).should.equal('          1  2  3  4\n');
     });
 
     it('should print a new line after the last day of the month', function() {
-      month.addLine(26,31).should.equal('26 27 28 29 30 31\n');
+      month.addLine(26,7,2015).should.equal('26 27 28 29 30 31\n');
     });
   });
 
