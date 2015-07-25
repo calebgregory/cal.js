@@ -4,6 +4,17 @@ var should = require('chai').should();
 var month = require(path.join(process.cwd(),'/lib/cal.month'));
 
 describe.only('Month', function() {
+  describe('#addLine()', function() {
+
+    it('should print 7 days in a row', function() {
+      month.addLine(3,9).should.equal(' 3  4  5  6  7  8  9\n');
+    });
+
+    it('should be print the first line in a month', function() {
+      month.addLine(1,4,7,2015).should.equal('          1  2  3  4\n');
+    });
+  });
+
   describe('#days()', function() {
     it('should start with the first day of the month, and print a list of days', function() {
       var output = [
