@@ -75,7 +75,7 @@ describe.only('Year', function() {
         '                      30 31                 '
       ];
 
-      yr.rowCombiner(7,2015).should.equal(rows);
+      yr.rowCombiner(7,2015).should.eql(rows);
     });
 
   });
@@ -86,7 +86,7 @@ describe.only('Year', function() {
 
     it('should split the output of a given month by each row', function() {
       var str = '1\n2\n3\n4\n5\n';
-      var arr = ['1','2','3','4','5',''];
+      var arr = ['1','2','3','4','5'];
       yr.splitByRow(str).should.eql(arr);
     });
 
