@@ -65,9 +65,17 @@ describe.only('Year', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
 
-    it('should combine the respective rows of 3 months into 1 row', function() {
-      var row = '             1  2  3   1  2  3  4  5  6  7   1  2  3  4  5  6  7';
-      yr.rowCombiner(1,2015,3).should.equal(row);
+    it('should combine the respective rows of 3 months', function() {
+      var rows = [
+        '          1  2  3  4                     1         1  2  3  4  5',
+        ' 5  6  7  8  9 10 11   2  3  4  5  6  7  8   6  7  8  9 10 11 12',
+        '12 13 14 15 16 17 18   9 10 11 12 13 14 15  13 14 15 16 17 18 19',
+        '19 20 21 22 23 24 25  16 17 18 19 20 21 22  20 21 22 23 24 25 26',
+        '26 27 28 29 30 31     23 24 25 26 27 28 29  27 28 29 30',
+        '                      30 31                 '
+      ];
+
+      yr.rowCombiner(1,2015).should.equal(row);
     });
 
   });
