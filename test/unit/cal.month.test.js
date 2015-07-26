@@ -41,8 +41,24 @@ describe('Month', function() {
         ' 5  6  7  8  9 10 11\n',
         '12 13 14 15 16 17 18\n',
         '19 20 21 22 23 24 25\n',
-        '26 27 28 29 30 31\n'
+        '26 27 28 29 30 31\n',
+        '\n'
       ].join('');
+      month.display(7,2015).should.equal(output);
+    });
+
+    it('should display January 2015 correctly', function() {
+      var output = [
+        '    January 2015\n',
+        'Su Mo Tu We Th Fr Sa\n',
+        '             1  2  3\n',
+        ' 4  5  6  7  8  9 10\n',
+        '11 12 13 14 15 16 17\n',
+        '18 19 20 21 22 23 24\n',
+        '25 26 27 28 29 30 31\n',
+        '\n'
+      ].join('');
+      month.display(1,2015).should.equal(output);
     });
   });
 
