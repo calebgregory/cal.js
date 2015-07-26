@@ -17,7 +17,7 @@ describe.only('Year', function() {
         '12 13 14 15 16 17 18\n',
         '19 20 21 22 23 24 25\n',
         '26 27 28 29 30 31\n',
-        ''
+        '\n'
       ].join('');
       yr.getMonth(7,2015).should.equal(output);
     });
