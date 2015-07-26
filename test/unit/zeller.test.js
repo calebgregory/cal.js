@@ -11,6 +11,14 @@ describe('Zeller', function() {
     });
   });
 
+  describe('#convertYear()', function() {
+    it('should convert year for Jan and Feb to year--', function() {
+      zeller.convertYear(2015,1).should.equal(2014);
+      zeller.convertYear(2015,2).should.equal(2014);
+      zeller.convertYear(2015,3).should.equal(2015);
+    });
+  });
+
   describe('#yearOfTheCentury()', function() {
     it('should return the year mod 100', function() {
       zeller.yearOfTheCentury(2015).should.equal(15);
