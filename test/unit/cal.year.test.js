@@ -41,6 +41,17 @@ describe.only('Year', function() {
 
   });
 
+  describe('#rowCombiner()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should combine the respective rows of 3 months into 1 row', function() {
+      var row = '             1  2  3   1  2  3  4  5  6  7   1  2  3  4  5  6  7';
+      yr.rowCombiner(1,2015,3).should.equal(row);
+    });
+
+  });
+
   describe('#splitByRow()', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
@@ -71,6 +82,21 @@ describe.only('Year', function() {
       yr.title(2015).should.equal(output);
     });
 
+  });
+
+  describe('#trailingSpace()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should put out the trailing space for a month if its column index < 3', function() {
+      var input = '31';
+      yr.trailingSpace(input,2).should.equal('                  ');
+    });
+
+    it('should put out a newline character if the column index is 3', function() {
+      var input = '31';
+      yr.trailingSpace(input,3).should.equal('\n');
+    });
   });
 
   describe('#wkdys()', function() {
