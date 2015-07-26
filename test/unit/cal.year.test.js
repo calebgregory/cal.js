@@ -17,7 +17,7 @@ describe.only('Year', function() {
         '12 13 14 15 16 17 18\n',
         '19 20 21 22 23 24 25\n',
         '26 27 28 29 30 31\n',
-        '\n'
+        ''
       ].join('');
       yr.getMonth(7,2015).should.equal(output);
     });
@@ -47,16 +47,16 @@ describe.only('Year', function() {
 
     it('should list three months in a row', function() {
       var row = [
-        '      January               February               March',
-        'Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa',
-        '             1  2  3   1  2  3  4  5  6  7   1  2  3  4  5  6  7',
-        ' 4  5  6  7  8  9 10   8  9 10 11 12 13 14   8  9 10 11 12 13 14',
-        '11 12 13 14 15 16 17  15 16 17 18 19 20 21  15 16 17 18 19 20 21',
-        '18 19 20 21 22 23 24  22 23 24 25 26 27 28  22 23 24 25 26 27 28',
-        '25 26 27 28 29 30 31                        29 30 31',
-        '                                            '
-      ].join('\n');
-      yr.monthRow(1,2015).should.equal(row);
+        '      January               February               March\n',
+        'Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n',
+        '             1  2  3   1  2  3  4  5  6  7   1  2  3  4  5  6  7\n',
+        ' 4  5  6  7  8  9 10   8  9 10 11 12 13 14   8  9 10 11 12 13 14\n',
+        '11 12 13 14 15 16 17  15 16 17 18 19 20 21  15 16 17 18 19 20 21\n',
+        '18 19 20 21 22 23 24  22 23 24 25 26 27 28  22 23 24 25 26 27 28\n',
+        '25 26 27 28 29 30 31                        29 30 31\n',
+        '                                            \n'
+      ].join('');
+      yr.monthRow(1,1,2015).should.equal(row);
     });
 
   });
@@ -75,7 +75,7 @@ describe.only('Year', function() {
         '                      30 31                 '
       ];
 
-      yr.rowCombiner(1,2015).should.equal(rows);
+      yr.rowCombiner(7,2015).should.equal(rows);
     });
 
   });
