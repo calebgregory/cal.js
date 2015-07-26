@@ -4,6 +4,26 @@ var path = require('path');
 
 describe.only('Year', function() {
 
+  describe('#getMonth()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should get a month from a month index and year', function() {
+      var output = [
+        '     July 2015\n',
+        'Su Mo Tu We Th Fr Sa\n',
+        '          1  2  3  4\n',
+        ' 5  6  7  8  9 10 11\n',
+        '12 13 14 15 16 17 18\n',
+        '19 20 21 22 23 24 25\n',
+        '26 27 28 29 30 31\n',
+        '\n'
+      ].join('');
+      yr.getMonth(7,2015).should.equal(output);
+    });
+
+  });
+
   describe('#monthLine()', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
@@ -57,18 +77,9 @@ describe.only('Year', function() {
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
 
     it('should split the output of a given month by each row', function() {
-      var july = [
-        '     July 2015',
-        'Su Mo Tu We Th Fr Sa',
-        '          1  2  3  4',
-        ' 5  6  7  8  9 10 11',
-        '12 13 14 15 16 17 18',
-        '19 20 21 22 23 24 25',
-        '26 27 28 29 30 31',
-        ''
-      ];
-      yr.splitByRow(7,2015).should.eql(july);
-
+      var str = '1\n2\n3\n4\n5\n';
+      var arr = ['1','2','3','4','5',''];
+      yr.splitByRow(str).should.eql(arr);
     });
 
   });
