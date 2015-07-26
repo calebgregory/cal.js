@@ -56,7 +56,7 @@ describe.only('Year', function() {
         '25 26 27 28 29 30 31                        29 30 31\n',
         '                                            \n'
       ].join('');
-      yr.monthRow(1,1,2015).should.equal(row);
+      yr.monthRow(1,2015).should.equal(row);
     });
 
   });
