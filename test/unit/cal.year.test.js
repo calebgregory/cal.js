@@ -75,7 +75,7 @@ describe.only('Year', function() {
         '                      30 31                 '
       ];
 
-      yr.rowCombiner(1,2015).should.equal(row);
+      yr.rowCombiner(1,2015).should.equal(rows);
     });
 
   });
