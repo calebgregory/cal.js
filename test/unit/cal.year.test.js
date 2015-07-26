@@ -35,6 +35,23 @@ describe.only('Year', function() {
     });
   });
 
+  describe('#monthLine()', function() {
+
+    var yr = require(path.join(process.cwd(),'/lib/cal.year'));
+
+    it('should print three columns of months, offset proportionally to each month', function() {
+      var output1 = '      January               February               March\n';
+      yr.monthLine(1).should.equal(output1);
+      var output2 = '       April                  May                   June\n';
+      yr.monthLine(4).should.equal(output2);
+      var output3 = '        July                 August              September\n';
+      yr.monthLine(7).should.equal(output3);
+      var output4 = '      October               November              December\n';
+      yr.monthLine(10).should.equal(output4);
+    });
+
+  });
+
   describe('#monthName', function() {
 
     var yr = require(path.join(process.cwd(),'/lib/cal.year'));
