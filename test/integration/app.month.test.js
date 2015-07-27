@@ -1,7 +1,6 @@
 var path = require('path');
 var should = require('chai').should();
 
-
 describe('Cal',function() {
 
   describe('normal year', function() {
