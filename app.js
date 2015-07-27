@@ -19,42 +19,47 @@ var dates = argv._;
 
 var rs = new Readable;
 
-if(!dates.length) {
+if(!dates.length) { // no arguments passed
 
-  rs.push(month.display(7,2015));
-  rs.push(null);
+  var today = require(path.join(process.cwd(),'/lib/cal.today'));
+  var m = today.month,
+      y = today.year;
+  rs.push(month.display(m,y));
 
-} else if(dates.length === 1) {
+} else if(dates.length === 1) {         // just a year is passed
 
   var y = dates[0];
 
-  if(typeof parseInt(y) !== 'number') {
-    rs.push(usageMsg(y));
-  }
-
-  if(y > 1752 && y < 10000) {
+  if(typeof y !== 'number') {           // is this arg not a number?
+    rs.push(errorMsg(0));
+  } else if(y > 1752 && y < 10000) {    // is this year in a range we can work with?
     rs.push(yr.display(y));
-  } else {
+  } else {                              // it is a number but not in our range
     rs.push(errorMsg(y));
   }
-  rs.push(null);
 
-} else if(dates.length === 2) {
+} else if(dates.length === 2) {         // a year and a month are passed
 
   var m = dates[0];
   var y = dates[1];
 
-  if(m > 0 && m < 13) {
-    if(y > 1752 && y < 10000) {
+  if(m > 0 && m < 13) {                 // is the month valid?
+    if(typeof y !== 'number') {
+      rs.push(errorMsg(0));
+    } else if(y > 1752 && y < 10000) {  // is the year valid?
       rs.push(month.display(m,y));
-    } else {
+    } else {                            // the year's not in our range
       rs.push(errorMsg(y));
     }
-  } else {
+  } else {                              // the month's not in our range
       rs.push(errorMsg(y,m));
   }
-  rs.push(null);
+
+} else {                                // too many arguments
+
+  rs.push(usageMsg());
 
 }
+rs.push(null);
 
 rs.pipe(process.stdout);

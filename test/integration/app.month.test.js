@@ -112,6 +112,14 @@ describe('Cal',function() {
       });
     });
 
+    it('should return a usage message if an invalid flag is passed', function(done) {
+      cp.execFile('./app.js', ['h'], function(err,stdout_app){
+        var err_msg = 'cal: year 0 not in range 1753..9999\n';
+        stdout_app.should.equal(err_msg);
+        done();
+      });
+    });
+
     it('should return an error message if an invalid year is passed with a month to it', function(done) {
       cp.execFile('./app.js', ['12','1752'], function(err,stdout_app){
         var err_msg = 'cal: year 1752 not in range 1753..9999\n';
