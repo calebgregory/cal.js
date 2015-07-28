@@ -64,21 +64,21 @@ describe('CLI', function() {
 
     describe('bad arguments', function() {
 
-      it('should print an err message for bad month', function() { // 1752 // 10000 // 13 // asdf
+      it('should print an err message for bad month', function(done) { // 1752 // 10000 // 13 // asdf
 
-        testCal('13 2015');
-
-      });
-
-      it('should print an err message for bad year', function() {
-
-        testCal('10000');
+        badArgTest('13 2015',done);
 
       });
 
-      it('should print usage help for bad argument', function() {
+      it('should print an err message for bad year', function(done) {
 
-        testCal('asf');
+        badArgTest('10000',done);
+
+      });
+
+      it('should print usage help for bad argument', function(done) {
+
+        badArgTest('asf',done);
 
       });
 
@@ -105,4 +105,15 @@ function testCal(arg) {
   //  });
   //});
 
+}
+
+function badArgTest(arg,done){
+
+  cp.exec('cal' + ' ' + arg, function(err) {
+    var lastErr = err;
+    cp.exec('./app.js' + ' ' + arg, function(err, output) {
+      output.should.equal(lastErr.toString().split("\n")[1]);
+      done();
+    });
+  });
 }
