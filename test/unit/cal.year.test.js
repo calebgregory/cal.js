@@ -2,7 +2,7 @@ var should = require('chai').should();
 var assert = require('chai').assert;
 var path = require('path');
 
-describe.only('Year', function() {
+describe('Year', function() {
 
   describe('#display()', function() {
 

@@ -1,3 +1,4 @@
+var should = require('chai').should();
 var cp = require('child_process');
 
 describe('CLI', function() {
