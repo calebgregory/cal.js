@@ -4,7 +4,9 @@ var os = require('os');
 console.log(
   'platform:',os.platform(),'\n',
   'type:',os.type(),'\n',
-  'arch:',os.arch(),'\n'
+  'arch:',os.arch(),'\n',
+  'host:',os.hostname(),'\n',
+  'release:',os.release(),'\n'
 );
 
 describe('CLI', function() {
