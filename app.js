@@ -19,7 +19,34 @@ var dates = argv._;
 
 var rs = new Readable;
 
-if(!dates.length) { // no arguments passed
+if(argv.serve) {
+
+  var port = Math.floor(Math.random()*4999 + 5000);
+  require(path.join(process.cwd(),'/lib/serve'))(port);
+
+  var msg = ['\n',
+    '!######################################################!\n',
+    '!#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#!\n',
+    '!#@                                                  @#!\n',
+    '!#@     server running on http://localhost:'+port+'      @#!\n',
+    '!#@                                                  @#!\n',
+    '!#@     to view the calendar for a given month       @#!\n',
+    '!#@     or year, open this link in your browser      @#!\n',
+    '!#@     and enter, for example,                      @#!\n',
+    '!#@                                                  @#!\n',
+    '!#@       http://localhost:'+port+'/cal/12/2000,         @#!\n',
+    '!#@       http://localhost:'+port+'/cal/2000/12,         @#!\n',
+    '!#@       http://localhost:'+port+'/cal/2000,   or       @#!\n',
+    '!#@       http://localhost:'+port+'/cal                  @#!\n',
+    '!#@                                                  @#!\n',
+    '!#@     ...have fun!                                 @#!\n',
+    '!#@                                                  @#!\n',
+    '!#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#!\n',
+    '!######################################################!\n'
+  ].join('');
+  console.log(msg);
+
+} else if(!dates.length) {              // no arguments passed
 
   var today = require(path.join(process.cwd(),'/lib/cal.today'));
   var m = today.month,
@@ -52,7 +79,7 @@ if(!dates.length) { // no arguments passed
       rs.push(errorMsg(y));
     }
   } else {                              // the month's not in our range
-      rs.push(errorMsg(y,m));
+    rs.push(errorMsg(y,m));
   }
 
 } else {                                // too many arguments
