@@ -3,12 +3,12 @@ var http = require('http');
 var path = require('path');
 var should = require('chai').should();
 
-describe.only('routes', function() {
+describe('routes', function() {
 
   this.timeout(7000);
 
   before(function() {
-    require(path.join(process.cwd(),'/server'));
+    require(path.join(process.cwd(),'/lib/serve'))(1337);
   });
 
   it('should return a year when a year is put in the route', function(done) {
