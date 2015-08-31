@@ -15,13 +15,13 @@ or, for an annual calendar,
 ```
 $ ./cal.js 2000
 ```
-![CLI](/docs/screenshots/cal-cli.png?raw=true)
+![CLI](docs/screenshots/cal-cli.png?raw=true)
 To view calendar in the browser, run
 
 ```
 $ ./cal.js --serve
 ```
-![Browser](/docs/screenshots/cal-serve.png?raw=true)
+![Browser](docs/screenshots/cal-serve.png?raw=true)
 
 and open the provided link in your browser.
 
