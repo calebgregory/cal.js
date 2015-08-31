@@ -3,7 +3,7 @@ var http = require('http');
 var path = require('path');
 var should = require('chai').should();
 
-describe.only('routes', function() {
+describe('routes', function() {
 
   this.timeout(7000);
 
