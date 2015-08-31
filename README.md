@@ -1,6 +1,6 @@
 # cal.js
 
-A Node.js emulation of the unix cal
+A Node.js emulation of the unix cal - with the extent of emulation including whitespace.
 
 ## Usage
 
@@ -32,10 +32,30 @@ $ git clone https://github.com/calebgregory/cal.js.git
 $ npm install
 ```
 
-## Goals
+## Accomplished Goals
 
-- Gain a proficiency in test-driven development using Mocha/Chai
-- Build an app using small modules of functionality
+- Gain a proficiency in test-driven development using Mocha & Chai
+- Use continuous integration tools Travis CI and Code Climate
+- Build a Node.js app with small modules, separating business logic from
+  the user interface
+
+This app was my first go at using TDD to build an app. My main focus was
+on digesting a collection of tasks and simplifying these tasks into small
+microservices and functions each of which performs one job well. I
+wasn't completely successful in this task (this [month.addLine
+function](https://github.com/calebgregory/cal.js/blob/master/lib/cal.month.js#L5-L26)
+is brutal). Still, this app demonstrates my [analytical approach to
+problem solving](https://github.com/calebgregory/cal.js/blob/master/lib/whitespace.txt) and my drive to [simplify tasks into generalized functions](https://github.com/calebgregory/cal.js/blob/master/lib/cal.month.js#L107-L119).
+
+## Desired Features
+
+- Total integration for a Linux environment
+
+Travis CI runs on an Ubuntu virtual machine. The whitespace rules of
+Linux's cal binary are totally different from those of Darwin's, so
+getting the build to pass on Travis CI involves writing totally
+different unit and integration tests. I started this process, using
+node's os module, but have not finished.
 
 ## License
 
