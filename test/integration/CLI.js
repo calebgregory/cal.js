@@ -1,5 +1,6 @@
 var should = require('chai').should();
 var cp = require('child_process');
+var os = require('os');
 
 describe('CLI', function() {
 
@@ -61,7 +62,7 @@ describe('CLI', function() {
 
   });
 
-  describe('Usage', function() {
+  describe.skip('Usage', function() {
 
     describe('bad arguments', function() {
 
@@ -93,6 +94,10 @@ function testCal(arg) {
 
   var sep = arg ? ' ' : '';
   arg = arg || '';
+  var cmd =
+    os.platform() === 'linux' ?
+    'cal -h' :
+    'cal';
 
   var output = cp.execSync('./cal.js' + sep + arg).toString();
   var goal = cp.execSync('cal' + sep + arg).toString();
@@ -110,7 +115,11 @@ function testCal(arg) {
 
 function badArgTest(arg,done){
 
-  cp.exec('cal' + ' ' + arg, function(err) {
+  var cmd =
+    os.platform() === 'linux' ?
+    'cal -h' :
+    'cal';
+  cp.exec(cmd + ' ' + arg, function(err) {
     var lastErr = err;
     cp.exec('./cal.js' + ' ' + arg, function(err, output) {
       output.should.equal(lastErr.toString().split("\n")[1]);
