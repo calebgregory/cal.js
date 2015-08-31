@@ -94,12 +94,12 @@ function testCal(arg) {
   var sep = arg ? ' ' : '';
   arg = arg || '';
 
-  var output = cp.execSync('./app.js' + sep + arg).toString();
+  var output = cp.execSync('./cal.js' + sep + arg).toString();
   var goal = cp.execSync('cal' + sep + arg).toString();
   output.should.equal(goal);
 
   // an asynchronous approach
-  //cp.exec('./app.js' + sep + arg, function(err, output) {
+  //cp.exec('./cal.js' + sep + arg, function(err, output) {
   //  cp.exec(cmd, function(err, goalOutput) {
   //    output.should.equal(goalOutput);
   //    done();
@@ -112,7 +112,7 @@ function badArgTest(arg,done){
 
   cp.exec('cal' + ' ' + arg, function(err) {
     var lastErr = err;
-    cp.exec('./app.js' + ' ' + arg, function(err, output) {
+    cp.exec('./cal.js' + ' ' + arg, function(err, output) {
       output.should.equal(lastErr.toString().split("\n")[1]);
       done();
     });

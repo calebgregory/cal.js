@@ -25,7 +25,7 @@ function testRoute(arg,route,done) {
 
   var sep = arg ? ' ' : '';
   arg = arg || '';
-  var cmd = './app.js'+ sep+ arg;
+  var cmd = './cal.js'+ sep+ arg;
   var url = 'http://localhost:1337'+ route;
 
   var goal = cp.execSync(cmd).toString();
