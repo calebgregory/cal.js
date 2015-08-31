@@ -105,7 +105,7 @@ describe('Cal',function() {
     it('should return an error message if an invalid year is passed to it', function(done) {
       // 9 1752
       cp.execFile('./cal.js', ['1752'], function(err,stdout_app){
-        var err_msg = 'cal: year 1752 not in range 1753..9999';
+        var err_msg = 'cal: year 1752 not in range 1753..9999\n';
         stdout_app.should.equal(err_msg);
         done();
       });
@@ -113,7 +113,7 @@ describe('Cal',function() {
 
     it('should return a usage message if an invalid flag is passed', function(done) {
       cp.execFile('./cal.js', ['h'], function(err,stdout_app){
-        var err_msg = 'cal: year 0 not in range 1753..9999';
+        var err_msg = 'cal: year 0 not in range 1753..9999\n';
         stdout_app.should.equal(err_msg);
         done();
       });
@@ -121,7 +121,7 @@ describe('Cal',function() {
 
     it('should return an error message if an invalid year is passed with a month to it', function(done) {
       cp.execFile('./cal.js', ['12','1752'], function(err,stdout_app){
-        var err_msg = 'cal: year 1752 not in range 1753..9999';
+        var err_msg = 'cal: year 1752 not in range 1753..9999\n';
         stdout_app.should.equal(err_msg);
         done();
       });
@@ -130,7 +130,7 @@ describe('Cal',function() {
 
     it('should return an error message if an invalid month is passed to it', function(done) {
       cp.execFile('./cal.js', ['13','2015'], function(err,stdout_app){
-        var err_msg = 'cal: 13 is neither a month number (1..12) nor a name';
+        var err_msg = 'cal: 13 is neither a month number (1..12) nor a name\n';
         stdout_app.should.equal(err_msg);
         done();
       });
