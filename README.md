@@ -36,6 +36,9 @@ $ npm install
 
 - Gain a proficiency in test-driven development using Mocha & Chai
 - Use continuous integration tools Travis CI and Code Climate
+- Exercising consciousness of git version control, making
+  descriptive git commit messages to serve as documentation, and
+  committing one portion of functionality per commit
 - Build a Node.js app with small modules, separating business logic from
   the user interface
 
