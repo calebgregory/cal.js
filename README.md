@@ -54,11 +54,11 @@ problem solving](https://github.com/calebgregory/cal.js/blob/master/lib/whitespa
 
 - Total integration for a Linux environment
 
-Travis CI runs on an Ubuntu virtual machine. The whitespace rules of
-Linux's cal binary are totally different from those of Darwin's, so
+Travis CI runs on an Ubuntu virtual machine. The printing rules of
+Linux's cal output are totally different from those of Darwin's, so
 getting the build to pass on Travis CI involves writing totally
 different unit and integration tests. I started this process, using
-node's os module, but have not finished.
+node's os module, but have not completed it.
 
 ## License
 
